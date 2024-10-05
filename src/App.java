@@ -3,17 +3,34 @@ public class App {
     public static void main (String[] args) throws Exception{
         
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingrese el tamanio del arreglo");
+        
+        //System.out.println("Ingrese el tamanio del arreglo");
         int tam = 0;
-        tam = scanner.nextInt();
+        do{
+            System.out.print("Ingrese el tamanio del arreglo");
+            while (!scanner.hasNextInt()) {
+                System.out.println("Entrada invalida");
+                System.out.println("Ingrese el tamanio del arreglo");
+                break;
+            }
+            tam = scanner.nextInt();
+            if (tam <= 0) {
+                System.out.println("El tamanio debe ser entero postivo mayor que cero");
+                
+            }//2
+            
+         }while (tam <= 0);
+
+
         int [] arreglo = new int[tam];
+
 
         for (int i = 0; i < tam ; i++) {
 
         arreglo[i] = LeerEnteroValido (scanner, "Elemento" + (i + 1) + ":", false);
         }
         for(int i : arreglo){
-            System.out.print(i);
+            System.out.print(i + ",");
         }
           scanner.close();
         }
