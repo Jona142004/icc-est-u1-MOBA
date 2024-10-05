@@ -24,6 +24,8 @@ public class MetodoOrdenamiento {
     }
     return arreglo;
 }
+   
+
 
     public void printlnArreglo(int[] arreglo) {
         for (int elemento : arreglo){ //for each el arreglo va instanciando cada elemento del arreglo se va almacenando
